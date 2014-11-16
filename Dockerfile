@@ -4,7 +4,7 @@ MAINTAINER Pythian Nikolaos Vyzas <vyzas@pythian.com>
 
 RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list # add the universe repo
 RUN apt-get -q -y update # update apt
-RUN apt-get -q -y install software-properties-common wget unzip # install software-properties-common for key management
+RUN apt-get -q -y install software-properties-common wget unzip curl # install software-properties-common for key management
 RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db # add the key for Mariadb Ubuntu repos
 RUN add-apt-repository 'deb http://ftp.cc.uoc.gr/mirrors/mariadb/repo/5.5/ubuntu trusty main' # add the MariaDB repository for 5.5
 RUN apt-get -q -y update # update apt again
