@@ -15,6 +15,7 @@ ADD ./my.cnf /etc/mysql/my.cnf
 # upload the locally created my.cnf (obviously this can go into the default MariaDB path
 RUN service mysql restart 
 # startup the service - this will fail since the nodes haven't been configured on first boot
+RUN wget https://dl.bintray.com/mitchellh/consul/0.4.1_linux_amd64.zip
 RUN unzip 0.4.1_linux_amd64.zip
 RUN install consul /usr/local/bin/consul
 EXPOSE 3306 4444 4567 4568 
