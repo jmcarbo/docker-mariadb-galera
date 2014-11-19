@@ -8,6 +8,7 @@ firstrun() {
 
 main() {
 	if [[ ! -f /data/debian-5.5.flag ]]
+	then
 		firstrun
 	fi
 
