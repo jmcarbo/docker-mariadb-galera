@@ -11,6 +11,7 @@ main() {
 		firstrun
 	fi
 
+	echo "datadir=/data" >> /etc/mysql/my.cnf
 	case "$1" in
 		master)
 			echo "Starting master"
