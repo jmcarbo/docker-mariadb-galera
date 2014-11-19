@@ -2,7 +2,7 @@
 
 firstrun() {
 	cp -r /var/lib/mysql/* /data
-	chown -R mysql /data/*
+	chown -R mysql /data
 	chown root /data/debian*
 }
 
