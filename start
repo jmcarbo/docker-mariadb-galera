@@ -13,7 +13,10 @@ main() {
 	fi
 
 	echo "datadir=/data" >> /etc/mysql/my.cnf
-	echo "wsrep_data_home_dir=/data" >> /etc/mysql/my.cnf
+	echo "wsrep_data_home_dir=/data/" >> /etc/mysql/my.cnf
+	#echo "gcache.dir = /var/lib/mysql/" >> /etc/mysql/my.cnf
+	#echo "gcache.name = /var/lib/mysql/galera.cache"  >> /etc/mysql/my.cnf
+
 	case "$1" in
 		master)
 			echo "Starting master"
