@@ -1,0 +1,26 @@
+#!/bin/bash
+
+main() {
+	case "$1" in
+		master)
+			echo "Starting master"
+			echo "wsrep_cluster_address=gcomm://" >> /etc/mysql/my.cnf
+			/usr/bin/mysqld_safe
+			;;
+		node)
+			echo "Starting node"
+			if [[ -z "$2" ]]
+			then
+				echo "Missing master node IP"
+			else
+				echo "wsrep_cluster_address=gcomm://$2" >> /etc/mysql/my.cnf
+				/usr/bin/mysqld_safe
+			fi
+			;;
+		*)
+			echo "start <master|node> <master node ip>"
+	esac
+}
+
+main $@
+
